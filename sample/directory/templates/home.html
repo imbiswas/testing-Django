@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Phone Directory</title>
+</head>
+<body>
+	<center>
+		<h2>Phone Directory</h2>
+ <table border="0" cellpadding ="5" >
+ 	 
+ 	<tr>
+ 		<th colspan="30" align="center">Name</th>
+ 		<th colspan="30" align="center">Phone Number</th>
+ 		<th colspan="30" align="center">Image</th>
+ 		<th></th>
+ 		<th></th>
+ 	</tr>
+ 	{% for p in contact %} 
+ 	<tr>
+ 		<td colspan="30" align="center">{{p.contact_name}}</td>
+ 		<td colspan="30" align="center">{{p.contact_number}}</td>
+ 		<td colspan="30" align="center"><img src = '/media/{{p.image}}' height="150" width="150"></td>
+ 		<td><a href='/update/{{p.id}}'>Update</a></td>
+		<td><a href='/delete/{{p.id}}'>Delete</a></td>
+ 	</tr>
+ 	 {% endfor %}
+ </table>
+ <h3><a href="/contact/">Add a contact</a></h3>
+</center>
+</body>
+</html>
